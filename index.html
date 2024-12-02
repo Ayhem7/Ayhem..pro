@@ -3,50 +3,135 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ayhem Kabouche - CV</title>
+    <title>Ayhem Kabouche - Portfolio</title>
     <style>
-        body {
-            font-family: Arial, sans-serif;
+        * {
             margin: 0;
             padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
             line-height: 1.6;
-            background-color: #f9f9f9;
-        }
-        header {
-            background: #333;
-            color: #fff;
-            padding: 1rem 0;
-            text-align: center;
-        }
-        section {
-            padding: 2rem;
-            max-width: 900px;
-            margin: auto;
-            background: #fff;
-            margin-bottom: 1rem;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-        }
-        h1, h2 {
+            background-color: #f4f4f9;
             color: #333;
         }
-        ul {
+
+        header {
+            background: linear-gradient(45deg, #007BFF, #00D4FF);
+            color: white;
+            padding: 2rem 0;
+            text-align: center;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        header p {
+            font-size: 1.2rem;
+        }
+
+        nav {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-size: 1rem;
+            transition: color 0.3s ease;
+        }
+
+        nav a:hover {
+            color: #f4f4f9;
+        }
+
+        section {
+            max-width: 1200px;
+            margin: 2rem auto;
+            padding: 2rem;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            animation: fadeIn 1s ease-in-out;
+        }
+
+        section h2 {
+            color: #007BFF;
+            margin-bottom: 1rem;
+        }
+
+        .skills ul, .work ul {
             list-style: none;
-            padding: 0;
         }
-        ul li {
-            margin: 0.5rem 0;
+
+        .skills ul li, .work ul li {
+            background: #f4f4f9;
+            padding: 0.5rem 1rem;
+            border-left: 5px solid #007BFF;
+            margin-bottom: 0.5rem;
+            border-radius: 5px;
+            animation: slideIn 0.5s ease;
         }
+
         footer {
-            background: #333;
-            color: #fff;
             text-align: center;
             padding: 1rem 0;
+            background: #333;
+            color: white;
+            margin-top: 2rem;
         }
-        a {
+
+        footer a {
+            color: #00D4FF;
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        @keyframes slideIn {
+            from {
+                transform: translateX(-20px);
+                opacity: 0;
+            }
+            to {
+                transform: translateX(0);
+                opacity: 1;
+            }
+        }
+
+        .contact {
+            text-align: center;
+        }
+
+        .contact p {
+            margin: 0.5rem 0;
+        }
+
+        .contact a {
             color: #007BFF;
             text-decoration: none;
         }
-        a:hover {
+
+        .contact a:hover {
             text-decoration: underline;
         }
     </style>
@@ -55,60 +140,59 @@
     <header>
         <h1>Ayhem Kabouche</h1>
         <p>IT Student | Customer Support Specialist | Digital Marketer</p>
+        <nav>
+            <a href="#profile">Profile</a>
+            <a href="#experience">Experience</a>
+            <a href="#skills">Skills</a>
+            <a href="#contact">Contact</a>
+        </nav>
     </header>
 
-    <section>
-        <h2>Profile</h2>
+    <section id="profile">
+        <h2>About Me</h2>
         <p>
-            Skilled in effective communication and problem-solving with a strong proficiency in English, French, and Arabic. Adept at managing multiple tasks and committed to continuous learning and professional development.
+            I am a results-driven professional skilled in communication, problem-solving, and teamwork. Fluent in English, French, and Arabic, I bring a dynamic skill set and a commitment to continuous learning and professional growth.
         </p>
     </section>
 
-    <section>
+    <section id="experience">
         <h2>Work Experience</h2>
-        <h3>E-Commerce Consultant, Taylor Vermeil (2021 - 2022)</h3>
-        <ul>
-            <li>Managed comprehensive sales operations on CRM platforms like Salesforce and SAP.</li>
-            <li>Developed and executed advertising strategies on Facebook Ads and Google Ads.</li>
-            <li>Handled order confirmations via phone and email.</li>
-        </ul>
-
-        <h3>Freelancer (2022 - 2023)</h3>
-        <ul>
-            <li>Worked with affiliate programs for antivirus and advertising companies using email marketing strategies.</li>
-            <li>Created landing pages and implemented dropshipping solutions for various products.</li>
-        </ul>
+        <div class="work">
+            <ul>
+                <li>
+                    <strong>E-Commerce Consultant, Taylor Vermeil (2021 - 2022):</strong>
+                    Managed sales operations, developed advertising strategies on platforms like Facebook Ads, and ensured customer satisfaction through efficient communication.
+                </li>
+                <li>
+                    <strong>Freelancer (2022 - 2023):</strong>
+                    Collaborated with affiliate programs, created landing pages, and optimized email marketing campaigns for antivirus companies.
+                </li>
+            </ul>
+        </div>
     </section>
 
-    <section>
-        <h2>Education</h2>
-        <h3>WSB Akademia</h3>
-        <p>Bachelor of Computer Science and Security (In Progress)</p>
-
-        <h3>University of Constantine</h3>
-        <p>2 years of IT studies (Completed in 2023)</p>
-    </section>
-
-    <section>
+    <section id="skills">
         <h2>Skills</h2>
-        <ul>
-            <li>CRM Platforms: Salesforce, SAP</li>
-            <li>Digital Marketing: Facebook Ads, Google Ads</li>
-            <li>Technical Skills: Python, PHP, Linux</li>
-            <li>Languages: English (Fluent), French (Fluent), Arabic (Native), Spanish (Basic)</li>
-        </ul>
+        <div class="skills">
+            <ul>
+                <li>CRM Platforms: Salesforce, SAP</li>
+                <li>Technical Skills: Python, PHP, Linux</li>
+                <li>Digital Marketing: Facebook Ads, Google Ads</li>
+                <li>Languages: English (Fluent), French (Fluent), Arabic (Native)</li>
+            </ul>
+        </div>
     </section>
 
-    <section>
+    <section id="contact">
         <h2>Contact</h2>
-        <p>
-            Email: <a href="mailto:Ayhem.Pro.k@gmail.com">Ayhem.Pro.k@gmail.com</a><br>
-            Phone: +48 453 322 840
-        </p>
+        <div class="contact">
+            <p>Email: <a href="mailto:Ayhem.Pro.k@gmail.com">Ayhem.Pro.k@gmail.com</a></p>
+            <p>Phone: +48 453 322 840</p>
+        </div>
     </section>
 
     <footer>
-        <p>&copy; 2024 Ayhem Kabouche</p>
+        <p>&copy; 2024 Ayhem Kabouche | <a href="#">Back to Top</a></p>
     </footer>
 </body>
 </html>
